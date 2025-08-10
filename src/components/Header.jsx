@@ -26,7 +26,7 @@ const Header = () => {
           }
           {
             !user && <>
-              <Link to="/registrate" className="btn-inicio">Inicio</Link>
+              <Link to="/login" className="btn-inicio">Inicio</Link>
               <Link to="/registrate" className="btn-nosotros">Sobre Nosotros</Link>
               <Link to="/login" className="btn-login">Iniciar Sesion</Link>
               <Link to="/registrate" className="btn-registrar">Registrate</Link>

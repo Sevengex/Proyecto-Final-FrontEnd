@@ -3,7 +3,7 @@ import { Header } from "./Header"
 
 const Layout = (props) => {
   return (
-    <div className={props.background}>
+    <div className="layout-content">
       <Header />
       <main>
         {props.children}

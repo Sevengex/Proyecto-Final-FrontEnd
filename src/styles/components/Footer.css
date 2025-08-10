@@ -1,0 +1,44 @@
+footer {
+  background-color: #1d2633;
+  color: aliceblue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 20px;
+}
+
+.layout-content {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.link-contacto {
+  text-decoration: none;
+  color: darkorange;
+}
+
+.mitienda-cont,
+.contacto-cont,
+.enlaces-cont {
+  list-style: none;
+  line-height: 2;
+}
+
+.enlaces-cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-inicio,
+.link-us,
+.link-log,
+.link-reg {
+  color: darkorange;
+  text-decoration: none;
+}
+
+.virtual {
+  font-weight: normal;
+  font-size: 19px;
+}
