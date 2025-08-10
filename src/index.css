@@ -1,0 +1,75 @@
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.error {
+  color: red;
+}
+
+.popup-edit {
+  background-color: yellowgreen;
+  padding: 20px;
+}
+
+input,
+textarea {
+  display: block;
+  padding: 5px;
+}
+
+.header-img {
+  display: flex;
+  justify-content: start;
+  height: 90px;
+  margin-left: 20px;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+}
+
+.btn-inicio {
+  text-decoration: none;
+  color: white;
+  background-color: #007BFF;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.btn-nosotros {
+  text-decoration: none;
+  color: white;
+  background-color: #007BFF;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.btn-login {
+  text-decoration: none;
+  color: white;
+  background-color: #007BFF;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.btn-registrar {
+  text-decoration: none;
+  color: white;
+  background-color: #007BFF;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+link {
+  text-decoration: none;
+}
