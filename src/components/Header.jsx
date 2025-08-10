@@ -9,7 +9,7 @@ const Header = () => {
   }
 
   return (
-    <header style={{ backgroundColor: "lightblue" }}>
+    <header>
       <nav>
         <div className="header-img">
           <img src="https://mitiendavirtual.com.ar/wp-content/uploads/2021/05/logo2021.png" alt="imagen de logo" />
@@ -25,10 +25,10 @@ const Header = () => {
           }
           {
             !user && <>
-              <button className="btn-inicio"><Link to="/registrate">Inicio</Link></button>
-              <button className="btn-nosotros"><Link to="/registrate">Sobre Nosotros</Link></button>
-              <button className="btn-login"><Link to="/login">Iniciar Sesion</Link></button>
-              <button className="btn-registrar"><Link to="/registrate">Registrate</Link></button>
+              <Link to="/registrate" className="btn-inicio">Inicio</Link>
+              <Link to="/registrate" className="btn-nosotros">Sobre Nosotros</Link>
+              <Link to="/login" className="btn-login">Iniciar Sesion</Link>
+              <Link to="/registrate" className="btn-registrar">Registrate</Link>
             </>
           }
         </ul>
