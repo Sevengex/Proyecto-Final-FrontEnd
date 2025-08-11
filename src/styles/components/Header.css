@@ -2,7 +2,8 @@ header {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #215ebb;
+  background: linear-gradient(135deg, #22d3ee 0%, #2563eb 50%, #1f2937 100%);
+
 }
 
 .header-img {
@@ -28,7 +29,7 @@ header {
   color: white;
   background-color: darkorange;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 10px;
   display: inline-block;
   cursor: pointer;
   margin-bottom: 10px;

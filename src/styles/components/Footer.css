@@ -1,5 +1,5 @@
 footer {
-  background-color: #1d2633;
+  background: linear-gradient(135deg, lch(36.3% 31.87 277.31) 0%, #1d2633 50%, #1f2937 100%);
   color: aliceblue;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -36,10 +36,4 @@ footer {
 .virtual {
   font-weight: normal;
   font-size: 19px;
-}
-
-.layout-content {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
 }
