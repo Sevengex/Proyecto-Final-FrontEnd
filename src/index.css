@@ -5,4 +5,36 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* Contenido del footer */
+/* Contenido del Login */
+.title-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.subTitle-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.usu-log {
+  background-color: chartreuse;
+  display: flex;
+  justify-content: center;
+}
+
+.form-content {
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-cont {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+}

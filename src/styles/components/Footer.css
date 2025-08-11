@@ -7,11 +7,6 @@ footer {
   padding: 20px;
 }
 
-.layout-content {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
 
 .link-contacto {
   text-decoration: none;
@@ -41,4 +36,10 @@ footer {
 .virtual {
   font-weight: normal;
   font-size: 19px;
+}
+
+.layout-content {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
