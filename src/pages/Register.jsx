@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Layout } from "../components/Layout"
+import "../styles/components/Register.css"
 
 const Register = () => {
   const [username, setUsername] = useState("")
@@ -34,45 +35,45 @@ const Register = () => {
 
   return (
     <Layout>
-      <h1>Registrate</h1>
+      <div>
+        <section className="inputs-content">
+          <h2 className="subtitle-reg">Hola, bienvenido</h2>
+          <form className="form-cont" onSubmit={handleSubmit}>
+            <div className="usu-reg">
+              <label>Username:</label>
+              <input className="input-usu"
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
+              />
+            </div>
+            <div className="email-reg">
+              <label>Correo electrónico:</label>
+              <input className="input-email"
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+            </div>
+            <div className="pass-reg">
+              <label>Contraseña:</label>
+              <input className="input-pass"
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+            </div>
+            <button className="button-reg">Registrar</button>
+          </form>
 
-      <section>
-        <h2>Hola, bienvenido</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Username:</label>
-            <input
-              type="text"
-              onChange={(e) => setUsername(e.target.value)}
-              value={username}
-            />
-          </div>
-          <div>
-            <label>Correo electrónico:</label>
-            <input
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-          </div>
-          <div>
-            <label>Contraseña:</label>
-            <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-          </div>
-          <button>Ingresar</button>
-        </form>
-
-        {
-          error && <p style={{ color: "red" }}>{error}</p>
-        }
-        {
-          success && <p style={{ color: "green" }}>{success}</p>
-        }
-      </section>
+          {
+            error && <p style={{ color: "red" }}>{error}</p>
+          }
+          {
+            success && <p style={{ color: "green" }}>{success}</p>
+          }
+        </section>
+      </div>
     </Layout>
   )
 }
