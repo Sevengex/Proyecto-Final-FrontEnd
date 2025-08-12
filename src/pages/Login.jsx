@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
 import { useNavigate } from "react-router-dom"
-import "../styles/components/Login.css"
+import "../styles/pages/Login.css"
 
 const Login = () => {
   const [username, setUsername] = useState("")
@@ -20,7 +20,7 @@ const Login = () => {
     if (isLogin) {
       setUsername("")
       setPassword("")
-      nagivate("/")
+      nagivate("/home")
     }
   }
 

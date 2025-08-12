@@ -20,6 +20,8 @@ header {
   gap: 10px;
 }
 
+.button-dash,
+.button-loguot,
 .btn-inicio,
 .btn-nosotros,
 .btn-login,
@@ -36,6 +38,8 @@ header {
   margin-right: 10px;
 }
 
+.button-dash:active,
+.button-loguot:active,
 .btn-inicio:active,
 .btn-nosotros:active,
 .btn-login:active,
