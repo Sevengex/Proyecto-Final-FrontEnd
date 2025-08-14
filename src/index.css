@@ -41,3 +41,16 @@
   object-fit: contain;
   margin-bottom: 12px;
 }
+
+.title-text-content,
+.subtitle-text-content,
+.welcom-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: -1px -1px 11px 1px rgba(0, 0, 0, 0.64);
+  padding: 25px;
+  width: 100%;
+}
