@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
+import "../styles/pages/Home.css"
 
 const Home = () => {
   const [products, setProducts] = useState([])
@@ -163,8 +164,8 @@ const Home = () => {
                 <p className="category"><strong>{product.category}</strong></p>
                 {
                   user && <div>
-                    <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
-                    <button onClick={() => handleDelete(product.id)}>Borrar</button>
+                    <button className="btn-producto" onClick={() => handleOpenEdit(product)}>Actualizar</button>
+                    <button className="btn-producto" onClick={() => handleDelete(product.id)}>Borrar</button>
                   </div>
                 }
               </div>)

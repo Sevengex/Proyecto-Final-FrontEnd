@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Layout } from "../components/Layout"
+import "../styles/pages/Dashboard.css"
 
 const Dashboard = () => {
   const [name, setName] = useState("")
@@ -51,31 +52,32 @@ const Dashboard = () => {
 
   return (
     <Layout>
-      <h1>Panel de Administración</h1>
 
-      <section>
-        <h2>Cargar nuevo producto</h2>
+
+      <section className="newProd-cont">
+        <h1 className="title-sub">Panel de Administración</h1>
+        <h2 className="title-sub">Cargar nuevo producto</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Nombre del producto:</label>
-            <input type="text" name="nombre" onChange={(e) => setName(e.target.value)} value={name} />
+            <label className="name-prod">Nombre del producto:</label>
+            <input className="input-name-prod" type="text" name="nombre" onChange={(e) => setName(e.target.value)} value={name} />
           </div>
 
           <div>
-            <label>Precio:</label>
-            <input type="number" name="precio" onChange={(e) => setPrice(e.target.value)} value={price} />
+            <label className="price">Precio:</label>
+            <input className="input-price" type="number" name="precio" onChange={(e) => setPrice(e.target.value)} value={price} />
           </div>
 
           <div>
-            <label>Descripción:</label>
-            <textarea name="descripcion" rows="4" onChange={(e) => setDescription(e.target.value)} value={description} />
+            <label className="descrip">Descripción:</label>
+            <textarea className="textArea-Descrpition" name="descripcion" rows="4" onChange={(e) => setDescription(e.target.value)} value={description} />
           </div>
 
           {
             error && <p className="error">{error}</p>
           }
 
-          <button>Guardar producto</button>
+          <button className="btn-GuardarProd">Guardar producto</button>
         </form>
 
         {

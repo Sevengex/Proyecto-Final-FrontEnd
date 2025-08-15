@@ -26,7 +26,6 @@ const Login = () => {
 
   return (
     <Layout>
-      {/* <h1 className="title-cont">Inicia sesión</h1> */}
 
       <section className="login-cont" >
         <div className="subTitle-cont">
