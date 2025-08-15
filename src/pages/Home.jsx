@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
 import "../styles/pages/Home.css"
 
 const Home = () => {
+  const popupRef = useRef(null);
   const [products, setProducts] = useState([])
   const [showPopup, setShowPopup] = useState(null)
   const [productToEdit, setProductToEdit] = useState(null)
@@ -12,6 +13,13 @@ const Home = () => {
   const [descriptionEdit, setDescriptionEdit] = useState("")
   const [categoryEdit, setCategoryEdit] = useState("")
   const [imageEdit, setImageEdit] = useState("")
+
+  //Scrollea la pagina hasta el popupEdit en caso de estar muy abajo
+  useEffect(() => {
+    if (showPopup) {
+      popupRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [showPopup]);
 
   // simulando existencia del usuario, proximamente este estado será global
   const { user } = useAuth()
@@ -116,41 +124,51 @@ const Home = () => {
         </div>
 
         {
-          showPopup && <section className="popup-edit">
-            <h2>Editando producto.</h2>
-            <button onClick={() => setShowPopup(null)}>Cerrar</button>
-            <form onSubmit={handleUpdate}>
-              <input
-                type="text"
-                placeholder="Ingrese el titulo"
-                value={titleEdit}
-                onChange={(e) => setTitleEdit(e.target.value)}
-              />
-              <input
-                type="number"
-                placeholder="Ingrese el precio"
-                value={priceEdit}
-                onChange={(e) => setPriceEdit(e.target.value)}
-              />
-              <textarea
-                placeholder="Ingrese la descripción"
-                value={descriptionEdit}
-                onChange={(e) => setDescriptionEdit(e.target.value)}
-              ></textarea>
-              <input
-                type="text"
-                placeholder="Ingrese la categoria"
-                value={categoryEdit}
-                onChange={(e) => setCategoryEdit(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Ingrese la URL de la imagen"
-                value={imageEdit}
-                onChange={(e) => setImageEdit(e.target.value)}
-              />
-              <button>Actualizar</button>
+          showPopup && <section ref={popupRef} className="popup-edit">
+            <h2>Editando producto</h2>
+
+            <form className="inputs-cont" onSubmit={handleUpdate}>
+              <div>
+                <h3 className="text-inputs">Titulo</h3>
+                <input className="inputs-edit"
+                  type="text"
+                  placeholder="Ingrese el titulo"
+                  value={titleEdit}
+                  onChange={(e) => setTitleEdit(e.target.value)}
+                />
+                <h3 className="text-inputs">Precio</h3>
+                <input className="inputs-edit"
+                  type="number"
+                  placeholder="Ingrese el precio"
+                  value={priceEdit}
+                  onChange={(e) => setPriceEdit(e.target.value)}
+                />
+                <h3 className="text-inputs">Descripcion</h3>
+                <textarea className="input-description"
+                  placeholder="Ingrese la descripción"
+                  value={descriptionEdit}
+                  onChange={(e) => setDescriptionEdit(e.target.value)}
+                ></textarea>
+              </div>
+              <div>
+                <h3 className="text-inputs">Categoria</h3>
+                <input className="inputs-edit"
+                  type="text"
+                  placeholder="Ingrese la categoria"
+                  value={categoryEdit}
+                  onChange={(e) => setCategoryEdit(e.target.value)}
+                />
+                <h3 className="text-inputs">URL Imagen</h3>
+                <input className="inputs-edit"
+                  type="text"
+                  placeholder="Ingrese la URL de la imagen"
+                  value={imageEdit}
+                  onChange={(e) => setImageEdit(e.target.value)}
+                />
+              </div>
             </form>
+            <button className="btn-producto">Actualizar</button>
+            <button className="btn-producto" onClick={() => setShowPopup(null)}>Cerrar</button>
           </section>
         }
         <section className="products">

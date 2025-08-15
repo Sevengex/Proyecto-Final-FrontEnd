@@ -60,5 +60,44 @@
 
 .description {
   padding: 5px;
+}
 
+.popup-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: -1px -1px 11px 1px rgba(0, 0, 0, 0.64);
+  padding: 25px;
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+
+.inputs-cont {
+  display: flex;
+}
+
+.inputs-edit {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+  height: 35px;
+  width: 250px;
+}
+
+.text-inputs {
+  margin-left: 20px;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.input-description {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+  height: 150px;
+  width: 250px;
 }
