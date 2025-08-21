@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
+import { SearchBar } from "../components/SearchBar";
 import "../styles/pages/Home.css"
 
 const Home = () => {
@@ -121,6 +122,7 @@ const Home = () => {
         <div>
           <h2>Nuestros productos</h2>
           <p>Elegí entre nuestras categorías más populares.</p>
+          <SearchBar />
         </div>
 
         {

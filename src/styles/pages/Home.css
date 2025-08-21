@@ -5,11 +5,38 @@
   flex-direction: column;
 }
 
+/* Diseño Responsive */
 .products-grid {
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
+
+
+@media (max-width: 480px) {
+  s .products-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 880px) {
+  .products-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 1440px) {
+  .products-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
 
 .product-card {
   background: #fff;
@@ -51,6 +78,11 @@
   cursor: pointer;
   margin-top: 10px;
   margin-right: 10px;
+}
+
+.btn-producto {
+  transform: translateY(2px);
+  box-shadow: -20px -30px 24px -22px rgba(0, 0, 0, 0.27) inset;
 }
 
 .price {
@@ -100,4 +132,68 @@
   border-radius: 5px;
   height: 150px;
   width: 250px;
+}
+
+/* Barra de busqueda */
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.searchbar-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+}
+
+.searchbar-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+
+.searchbar-button {
+  font-weight: bold;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: darkorange;
+  color: #fff;
+  cursor: pointer;
+}
+
+.searchbar-button:active {
+  transform: translateY(2px);
+  box-shadow: -20px -30px 24px -22px rgba(0, 0, 0, 0.27) inset;
+}
+
+.searchbar-clear {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .searchbar {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 880px) {
+  .searchbar {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .searchbar {
+    max-width: 100%;
+  }
 }

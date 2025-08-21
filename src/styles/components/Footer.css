@@ -3,8 +3,8 @@ footer {
   color: aliceblue;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
   padding: 20px;
+  gap: 32px;
 }
 
 
@@ -36,4 +36,27 @@ footer {
 .virtual {
   font-weight: normal;
   font-size: 19px;
+}
+
+@media (max-width: 880px) {
+
+  footer {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    gap: 32px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  footer {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    gap: 32px;
+  }
 }

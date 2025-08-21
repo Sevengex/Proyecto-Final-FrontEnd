@@ -20,14 +20,15 @@ const Header = () => {
           {
             user && <>
               <Link className="btn-inicio" to="/home">Inicio</Link>
+              <Link className="btn-nosotros" to="/withUs"> Sobre Nosotros</Link>
               <Link className="button-dash" to="/dashboard">Dashboard</Link>
-              <button className="button-loguot" onClick={handleLogout}>Cerrar sesión</button>
+              <Link className="btn-inicio" to="/login" onClick={handleLogout}>Cerrar sesión</Link>
             </>
           }
           {
             !user && <>
               <Link to="/login" className="btn-inicio">Inicio</Link>
-              <Link to="/registrate" className="btn-nosotros">Sobre Nosotros</Link>
+              <Link to="/withUs" className="btn-nosotros">Sobre Nosotros</Link>
               <Link to="/login" className="btn-login">Iniciar Sesion</Link>
               <Link to="/registrate" className="btn-registrar">Registrate</Link>
             </>
