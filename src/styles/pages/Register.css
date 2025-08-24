@@ -61,3 +61,17 @@
   transform: translateY(2px);
   box-shadow: -20px -30px 24px -22px rgba(0, 0, 0, 0.27) inset;
 }
+
+.msj-error {
+  color: red;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.msj-success {
+  color: green;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}

@@ -29,7 +29,7 @@ const UserProvider = (props) => {
   }
 
   return (
-    <UserContext.Provider value={{ login, logout, user }}>
+    <UserContext.Provider value={{ login, setUser, logout, setUser, user }}>
       {props.children}
     </UserContext.Provider>
   )
@@ -37,4 +37,4 @@ const UserProvider = (props) => {
 
 const useAuth = () => useContext(UserContext)
 
-export { UserProvider, useAuth }
+export { UserProvider, useAuth, UserContext }
