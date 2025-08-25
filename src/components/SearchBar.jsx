@@ -1,42 +1,37 @@
-import { useSearchParams } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
-const SearchBar = ({ placeholder = "Buscar productos..." }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const initial = searchParams.get("q") ?? "";
-  const [value, setValue] = useState(initial);
-  const inputRef = useRef(null);
+const SearchBar = ({ placeholder = "Buscar productos...", onSearch }) => {
+  const [value, setValue] = useState("");
 
-  useEffect(() => {
-    setValue(searchParams.get("q") ?? "");
-  }, [searchParams]);
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const next = value.trim();
-    if (next) setSearchParams({ q: next });
-    else setSearchParams({});
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    setValue(newValue);
+    onSearch(newValue);
   };
 
-  const onClear = () => {
-    setValue("");
-    setSearchParams({});
-    inputRef.current?.focus();
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   return (
-    <form className="searchbar" role="search" aria-label="Buscar productos" onSubmit={onSubmit}>
+    <form
+      className="searchbar"
+      role="search"
+      aria-label="Buscar productos"
+      onSubmit={handleSubmit}
+    >
       <input
-        ref={inputRef}
         type="search"
         className="searchbar-input"
         placeholder={placeholder}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={handleChange}
       />
-      <button className="searchbar-button">Buscar</button>
+      <button type="submit" className="searchbar-button">
+        Buscar
+      </button>
     </form>
   );
 };
 
-export { SearchBar };
+export { SearchBar }

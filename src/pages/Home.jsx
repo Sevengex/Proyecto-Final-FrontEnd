@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
 import { SearchBar } from "../components/SearchBar";
+import { useSearchParams } from "react-router-dom";
 import "../styles/pages/Home.css"
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
   const [descriptionEdit, setDescriptionEdit] = useState("")
   const [categoryEdit, setCategoryEdit] = useState("")
   const [imageEdit, setImageEdit] = useState("")
+  const [query, setQuery] = useState("");
 
   //Scrollea la pagina hasta el popupEdit en caso de estar muy abajo
   useEffect(() => {
@@ -36,12 +38,15 @@ const Home = () => {
     fetchingProducts()
   }, [])
 
+  const filteredProducts = products.filter((p) =>
+    p.title.toLowerCase().includes(query.toLowerCase())
+  );
+
   const handleDelete = async (id) => {
     const response = await fetch(`https://fakestoreapi.com/products/${id}`, { method: "DELETE" })
 
     if (response.ok) {
       setProducts(prevProduct => prevProduct.filter((product) => product.id != id))
-      // fetchingProducts()
     }
   }
 
@@ -122,7 +127,7 @@ const Home = () => {
         <div>
           <h2>Nuestros productos</h2>
           <p>Elegí entre nuestras categorías más populares.</p>
-          <SearchBar />
+          <SearchBar onSearch={setQuery} />
         </div>
 
         {
@@ -176,7 +181,7 @@ const Home = () => {
         <section className="products">
           <div className="products-grid" >
             {
-              products.map((product) => <div className="product-card" key={product.id}>
+              filteredProducts.map((product) => <div className="product-card" key={product.id}>
                 <h2 key={product.id}>{product.title}</h2>
                 <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} />
                 <p className="price">${product.price}</p>

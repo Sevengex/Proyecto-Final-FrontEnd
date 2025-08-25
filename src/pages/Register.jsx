@@ -38,9 +38,6 @@ const Register = () => {
       console.log("Usuario creado:", result);
 
       nagivate("/home")
-      setUsername("");
-      setEmail("");
-      setPassword("");
     }
   };
 
