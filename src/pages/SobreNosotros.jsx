@@ -1,4 +1,5 @@
 import { Layout } from "../components/Layout"
+import "../styles/pages/SobreNosotros.css"
 
 const SobreNosotros = () => {
   return (
